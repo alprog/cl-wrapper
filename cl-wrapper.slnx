@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="cl-wrapper.vcxproj" Id="4c17cfcf-07df-43f4-a46b-73507813c0dc" />
+</Solution>
