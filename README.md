@@ -10,7 +10,7 @@ This means that any source change triggers a recompile of all dependencies, even
 It makes modules behave almost identical to headers (and impose separation of interface and implementation).
 
 However, with C++ modules we can do a better job.
-We can skip recompilation of dependencies if only implementation/formating part of the file was changed but not the interface.
+We can skip recompilation of dependencies if only implementation/formating part of the file was changed, but not the interface.
 It will make possible to use single-file modules without sacrificing incremental builds.
 
 # How it works
