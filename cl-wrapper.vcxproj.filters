@@ -30,5 +30,11 @@
     <ClCompile Include="utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cmd_tool.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="child_process.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -86,3 +86,12 @@ std::string u16_to_utf8(const std::u16string& u16)
 
     return out;
 }
+
+std::string unquote(const std::string& str)
+{
+    if (str.size() >= 2 && str.front() == '"' && str.back() == '"')
+    {
+        return str.substr(1, str.size() - 2);
+    }
+	return str;
+}

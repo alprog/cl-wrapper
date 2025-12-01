@@ -138,7 +138,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="arguments.ixx" />
+    <ClCompile Include="child_process.ixx" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="cmd_tool.ixx" />
     <ClCompile Include="rsp.ixx" />
     <ClCompile Include="utils.cpp" />
     <ClCompile Include="utils.ixx" />

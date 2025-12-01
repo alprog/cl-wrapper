@@ -52,14 +52,19 @@ public:
 
 	bool contains(const std::string& value) const
 	{
-		for (const auto& arg : args)
+		return indexOf(value) != -1;
+	}
+
+	int indexOf(const std::string& value) const
+	{
+		for (int i = 0; i < args.size(); i++)
 		{
-			if (arg == value)
+			if (args[i] == value)
 			{
-				return true;
+				return i;
 			}
 		}
-		return false;
+		return -1;
 	}
 
 	std::string toCommandLine() const
