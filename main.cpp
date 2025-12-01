@@ -9,17 +9,19 @@ import arguments;
 
 int main(int argc, char** argv)
 {
-    std::string cmd = R"(C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\bin\Hostx64\x64\cl.exe)";
-    
     Arguments arguments(argc, argv);
+    std::string commandLine = arguments.toCommandLine();
+
     arguments.expandRsp();
-
-	for (int i = 0; i < arguments.count(); ++i) 
+	if (arguments.contains("/ifcOutput") && !arguments.contains("/scanDependencies"))
     {
-        std::cout << "Arg " << i << ": " << arguments[i] << std::endl;
-    }  
+        commandLine = arguments.toCommandLine();
+    }
 
-    cmd += " " + arguments.toCommandLine();
+    std::cout << commandLine << std::endl;
+
+    std::string clPath = R"(C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\bin\Hostx64\x64\cl.exe)";
+    std::string cmd = clPath + " " + commandLine;
 
     SECURITY_ATTRIBUTES sa{};
     sa.nLength = sizeof(sa);

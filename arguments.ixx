@@ -50,6 +50,18 @@ public:
 		}
 	}
 
+	bool contains(const std::string& value) const
+	{
+		for (const auto& arg : args)
+		{
+			if (arg == value)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 	std::string toCommandLine() const
 	{
 		std::ostringstream os;
