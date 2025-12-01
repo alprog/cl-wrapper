@@ -6,23 +6,20 @@ import child_process;
 export class CmdTool
 {
 public:
-	CmdTool(const std::string& fullPath)
-		: fullPath{ fullPath }
-		, exitCode{ -1 }
-	{
-	}
-
 	int run(const std::string& args)
 	{
 		reset();
 
-		auto cmdLine = fullPath + " " + args;
+		auto cmdLine = getToolPath() + " " + args;
 		ChildProcess process(cmdLine);
 		outputStream = process.readPipe();
 		exitCode = process.waitExit();
 		return exitCode;
 	}
 
+protected:
+	virtual std::string getToolPath() const = 0;
+	
 private:
 	void reset()
 	{
